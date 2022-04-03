@@ -27,7 +27,7 @@ int main()
         temp_ptr[t] = t*2;
         
     for(size_t t =0;t<size;t++)
-        cout <<temp_ptr[t]<<" ";
+        cout <<*(temp_ptr+t)<<" ";
 
     delete [] temp_ptr;
     cout<<endl;
