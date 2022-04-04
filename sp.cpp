@@ -66,6 +66,28 @@ int main()
     temp_ptr = &low_temp;
     cout << *temp_ptr << endl;  
 
+    cout << "\n------------------------------" << endl;
+
+    string name {"Ferferi"};
+    string *name_ptr {&name};
+
+    cout << *name_ptr<<endl;
+    name = "Jame";
+
+    cout << *name_ptr<<endl;
+    cout << "\n------------------------------" << endl;
+
+    vector<string> stooges {"Larry","AA","BB"};
+    vector<string> *vec_ptr {&stooges};
+
+    cout << "first: "<<(*vec_ptr).at(0)<<endl;
+
+    cout<< "print all: ";
+    for (auto s : *vec_ptr)
+        cout<<s<<" ";
+
+    cout<<endl;
+
     return 0;
 
 
