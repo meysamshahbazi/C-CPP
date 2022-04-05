@@ -6,6 +6,18 @@
 
 using namespace std;
 
+void double_data(int * int_ptr)
+{
+    *int_ptr *= 2;
+}
+
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = *temp;
+
+}
 int main() 
 {
     int num {10};
@@ -87,6 +99,35 @@ int main()
         cout<<s<<" ";
 
     cout<<endl;
+    cout << "\n------------------------------" << endl;
+
+    int scores [] {10,20,30,-1};
+
+    // int *score_ptr {scores};
+    score_ptr = scores;
+    
+    while(*(score_ptr) != -1)
+    {
+        cout<<*score_ptr++<<endl;
+        // score_ptr++;
+    }
+
+    //-----------------------------------------------
+    cout << "\n------------------------------" << endl;
+
+    int val = 10;
+    int *val_ptr {&val};
+
+    cout << "Value: " << val << endl;
+    double_data(val_ptr);
+    cout << "Value: " << val << endl;
+
+    double_data(&val);
+    cout << "Value: " << val << endl;
+
+    cout << "\n------------------------------" << endl;
+
+    
 
     return 0;
 

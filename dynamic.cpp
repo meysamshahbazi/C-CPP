@@ -28,8 +28,16 @@ int main()
         
     for(size_t t =0;t<size;t++)
         cout <<*(temp_ptr+t)<<" ";
-
+    cout<<endl;
     delete [] temp_ptr;
+    // delete  (temp_ptr+1);
+
+
+
+    for(size_t t =0; t<size;t++)
+        cout <<*(temp_ptr+t)<<" ";
+
+
     cout<<endl;
     return 0;
 
