@@ -35,11 +35,11 @@ int main()
 
     {
         Player frank;
-        frank.set_name("Frank");
+        // frank.set_name("Frank");
         Player hero{"Hero"};
         hero.set_name("Herooo");
         Player villain{"Vilian",100,12};
-        villain.set_name("Vilian");
+        // villain.set_name("Vilian");
 
 
     }

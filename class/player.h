@@ -12,6 +12,7 @@ private:
     int xp;
 public:
     void set_name(string n);
+    string get_name();
     Player();
     Player(string name);
     Player(string name, int health, int xp);
