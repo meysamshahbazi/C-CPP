@@ -10,6 +10,7 @@ class Shallow{
         int get_data_value() {return *data;}
         Shallow(int d);
         Shallow(const Shallow & source);
+        Shallow(Shallow &&source) noexcept;
         ~Shallow();
 
 };
@@ -27,6 +28,8 @@ Shallow::Shallow(int d)
 //     cout << "Copy constructor  - shallow copy" << endl;
 
 // }
+
+
 // compy constructor for deep coping
 
 
@@ -36,14 +39,26 @@ Shallow::Shallow(const Shallow & source )
     // data = new int;
     // *data = *source.data;
     cout << "Copy constructor  - DEEP copy" << endl;
-
 }
+
+Shallow::Shallow(Shallow && source) noexcept
+    :data{source.data}
+{
+    source.data = nullptr;
+    cout << "Move constructor - moving resource: " << *data << endl;
+}
+
+
 
 
 Shallow::~Shallow()
 {
+    if (data != nullptr) {
+        cout << "Destructor freeing data for: " << *data << endl;
+    } else {
+        cout << "Destructor freeing data for nullptr" << endl;
+    }
     delete data;
-    cout << "Destructor freeing data" << endl;
 }
 
 

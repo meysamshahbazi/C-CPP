@@ -2,6 +2,7 @@
 #include "account.h"
 #include "player.h"
 #include "shalow.h"
+#include <vector>
 
 
 using namespace std;
@@ -85,7 +86,18 @@ int main()
     cout<<"DATA1 is: "<<obj1.get_data_value()<<endl;
 
     cout<<"DATA2 is: "<<obj2.get_data_value()<<endl;
-
+    int x {100};
+    int &l_ref = x;
+    int &&r_ref = 10;
+    r_ref = x;
+    cout << "X l_ref: "<<r_ref<<endl;
+    cout<<"----------------------------------------"<<endl;
+    vector<Shallow> vec;
+    vec.push_back(Shallow(11));
+    vec.push_back(Shallow(22));
+    vec.push_back(Shallow(33));
+    vec.push_back(Shallow(44));
+    vec.push_back(Shallow(55));
 
     return 0;
 }
