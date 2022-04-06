@@ -1,9 +1,22 @@
 #include <iostream>
 #include "account.h"
 #include "player.h"
+#include "shalow.h"
 
 
 using namespace std;
+
+void display_player(Player p)
+{
+    cout << "Name: " << p.get_name() << endl;
+    cout << "Health: " << p.get_health() << endl;
+    cout << "XP: " << p.get_xp() << endl;   
+}
+
+void display_shallow(Shallow s)
+{
+    cout<<s.get_data_value()<<endl;
+}
 
 int main() 
 {
@@ -27,6 +40,7 @@ int main()
 
     cout << fa.get_balance()<<endl;
     // -----------------------------------------------------------
+    cout<<"----------------------------------------"<<endl;
     {
         Player slayer;
         slayer.set_name("Slayer");
@@ -40,6 +54,7 @@ int main()
         hero.set_name("Herooo");
         Player villain{"Vilian",100,12};
         // villain.set_name("Vilian");
+        display_player(hero);
 
 
     }
@@ -48,10 +63,14 @@ int main()
     enemy->set_name("Enemy");
     Player * level_boss = new Player{"Level Boss",50,13};
     level_boss->set_name("Level Boss");
+    
+
+    cout<<"----------------------------------------"<<endl;
+
+    Player new_enemy {*enemy};
+
     delete enemy;
     delete level_boss;
-
-
     return 0;
 }
 

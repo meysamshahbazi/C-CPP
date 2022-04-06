@@ -38,3 +38,18 @@ string Player::get_name()
 {
     return name;
 }
+int Player::get_health()
+{
+    return health;
+}
+int Player::get_xp()
+{
+    return xp;
+}
+Player::Player(const Player &source)
+    :name{source.name}, health{source.health}, xp{source.xp}
+    // :Player{source.name,source.health,source.xp}
+    {
+        cout<<"In copy Constructor"<< endl;
+    }
+

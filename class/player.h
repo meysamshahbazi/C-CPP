@@ -13,9 +13,12 @@ private:
 public:
     void set_name(string n);
     string get_name();
+    int get_health();
+    int get_xp();
     // Player();
     // Player(string name);
     Player(string name="None", int health=0, int xp=0);
+    Player(const Player &source);
     ~Player();
 };
 
