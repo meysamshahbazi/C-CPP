@@ -98,6 +98,11 @@ int main()
     vec.push_back(Shallow(33));
     vec.push_back(Shallow(44));
     vec.push_back(Shallow(55));
+    cout<<"----------------------------------------"<<endl;
+    const Player p;
+    display_player(p);
+
+    cout<<"----------------------------------------"<<endl;
 
     return 0;
 }
