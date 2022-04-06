@@ -5,20 +5,20 @@ void Player::set_name(string n)
     name = n;
 }
 
-Player::Player()
-    :name{"None"},health{100},xp {xp}
-{
-    // name = "None";
-    // health = 100;
-    // xp = 3;
-    cout << "No args constructor called"<< endl;
-}
+// Player::Player()
+//     :name{"None"},health{100},xp {xp}
+// {
+//     // name = "None";
+//     // health = 100;
+//     // xp = 3;
+//     cout << "No args constructor called"<< endl;
+// }
 
-Player::Player(string name)
-    :name{name},health{0},xp{0}
-{
-    cout << "String arg constructor called"<< endl;
-}
+// Player::Player(string name)
+//     :name{name},health{0},xp{0}
+// {
+//     cout << "String arg constructor called"<< endl;
+// }
 
 Player::Player(string name, int health, int xp)
     :name{name},health{health},xp{xp}

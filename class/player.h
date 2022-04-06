@@ -13,9 +13,9 @@ private:
 public:
     void set_name(string n);
     string get_name();
-    Player();
-    Player(string name);
-    Player(string name, int health, int xp);
+    // Player();
+    // Player(string name);
+    Player(string name="None", int health=0, int xp=0);
     ~Player();
 };
 
