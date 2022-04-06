@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void display_player(Player p)
+void display_player(const Player &p)
 {
     cout << "Name: " << p.get_name() << endl;
     cout << "Health: " << p.get_health() << endl;

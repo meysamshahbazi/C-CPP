@@ -34,15 +34,15 @@ Player::~Player()
     cout << "Destructor called for " << name << endl; 
 }
 
-string Player::get_name()
+string Player::get_name() const
 {
     return name;
 }
-int Player::get_health()
+int Player::get_health() const 
 {
     return health;
 }
-int Player::get_xp()
+int Player::get_xp() const 
 {
     return xp;
 }
