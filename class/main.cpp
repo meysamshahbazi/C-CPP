@@ -1,5 +1,8 @@
 #include <iostream>
 #include "account.h"
+#include "player.h"
+
+
 using namespace std;
 
 int main() 
@@ -21,6 +24,34 @@ int main()
         cout << "Withdraw OK" << endl;
     else
         cout << "Not sufficient funds" << endl; 
+
+    cout << fa.get_balance()<<endl;
+    // -----------------------------------------------------------
+    {
+        Player slayer;
+        slayer.set_name("Slayer");
+
+    }
+
+    {
+        Player frank;
+        frank.set_name("Frank");
+        Player hero{"Hero"};
+        hero.set_name("Herooo");
+        Player villain{"Vilian",100,12};
+        villain.set_name("Vilian");
+
+
+    }
+
+    Player * enemy = new Player;
+    enemy->set_name("Enemy");
+    Player * level_boss = new Player{"Level Boss",50,13};
+    level_boss->set_name("Level Boss");
+    delete enemy;
+    delete level_boss;
+
+
     return 0;
 }
 
