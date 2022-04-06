@@ -74,17 +74,17 @@ int main()
 
     cout<<"----------------------------------------"<<endl;
 
-    // Shallow obj1 {100};
-    // cout<<"DATA is: "<<obj1.get_data_value()<<endl;
-    // display_shallow(obj1);
-    // cout<<"DATA is: "<<obj1.get_data_value()<<endl;
-    // Shallow obj2{obj1};
-    // cout<<"DATA2 is: "<<obj2.get_data_value()<<endl;
-    // obj2.set_data_value(1000);
+    Shallow obj1 {100};
+    cout<<"DATA is: "<<obj1.get_data_value()<<endl;
+    display_shallow(obj1);
+    cout<<"DATA is: "<<obj1.get_data_value()<<endl;
+    Shallow obj2{obj1};
+    cout<<"DATA2 is: "<<obj2.get_data_value()<<endl;
+    obj2.set_data_value(1000);
 
-    // cout<<"DATA1 is: "<<obj1.get_data_value()<<endl;
+    cout<<"DATA1 is: "<<obj1.get_data_value()<<endl;
 
-    // cout<<"DATA2 is: "<<obj2.get_data_value()<<endl;
+    cout<<"DATA2 is: "<<obj2.get_data_value()<<endl;
 
 
     return 0;

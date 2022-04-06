@@ -28,10 +28,13 @@ Shallow::Shallow(int d)
 
 // }
 // compy constructor for deep coping
+
+
 Shallow::Shallow(const Shallow & source )
+    :Shallow(*source.data)
 {
-    data = new int;
-    *data = *source.data;
+    // data = new int;
+    // *data = *source.data;
     cout << "Copy constructor  - DEEP copy" << endl;
 
 }
