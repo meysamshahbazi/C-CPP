@@ -18,6 +18,23 @@ void swap(int *a, int *b)
     *b = temp;
 
 }
+
+void display(  vector<string> *  v)
+{
+    (*v).at(0) = "CHANGED";
+    for (auto s: *v)
+        cout << s<< " ";
+    cout << endl;
+
+    v = nullptr;
+}
+
+void display( const int * arr, int sen)
+{
+    while(*arr != sen)
+        cout << *(arr++) << " ";
+    cout << endl;
+}
 int main() 
 {
     int num {10};
@@ -134,6 +151,38 @@ int main()
     swap(&a,&b);
 
     cout << a << " "<<b<<endl;
+
+    cout << "\n------------------------------" << endl;
+
+    display(&stooges);
+
+    display(scores,-1);
+
+    cout << "\n------------------------------" << endl;
+
+
+    int n {101};
+    int & ref {n};
+
+    //  ref = n*2;
+
+    n = 301;
+
+
+    cout << n<<endl;
+    cout << ref<<endl;
+
+    ref = n*2;
+
+    cout << "\n------------------------------" << endl;
+
+    for (auto &s : stooges)
+        s = "CCC";
+
+    for (auto const &s: stooges )
+        cout<<s<<" ";
+
+    cout<< endl;
 
 
     return 0;
