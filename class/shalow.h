@@ -20,12 +20,22 @@ Shallow::Shallow(int d)
     *data = d;
 }
 
-Shallow::Shallow(const Shallow & source)
-    :data{source.data}
+// this is for shallow copy with comes up with problem
+// Shallow::Shallow(const Shallow & source)
+//     :data{source.data}
+// {
+//     cout << "Copy constructor  - shallow copy" << endl;
+
+// }
+// compy constructor for deep coping
+Shallow::Shallow(const Shallow & source )
 {
-    cout << "Copy constructor  - shallow copy" << endl;
+    data = new int;
+    *data = *source.data;
+    cout << "Copy constructor  - DEEP copy" << endl;
 
 }
+
 
 Shallow::~Shallow()
 {
