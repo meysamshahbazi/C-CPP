@@ -7,7 +7,7 @@ using namespace std;
 class Player
 {
 private:
-    string name;
+    string name {"XXXX"};
     int health;
     int xp;
 public:
