@@ -7,6 +7,11 @@
 
 using namespace std;
 
+void display_active_players()
+{
+    cout<<"Active Players: "<<Player::get_num_players()<<endl;
+}
+
 void display_player(const Player &p)
 {
     cout << "Name: " << p.get_name() << endl;
@@ -43,8 +48,10 @@ int main()
     // -----------------------------------------------------------
     cout<<"----------------------------------------"<<endl;
     {
+        display_active_players();
         Player slayer;
         slayer.set_name("Slayer");
+        display_active_players();
 
     }
 
@@ -101,7 +108,7 @@ int main()
     cout<<"----------------------------------------"<<endl;
     const Player p;
     display_player(p);
-
+    display_active_players();
     cout<<"----------------------------------------"<<endl;
 
     return 0;

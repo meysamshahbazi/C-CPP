@@ -1,5 +1,8 @@
 #include "player.h"
 
+
+int Player::num_players {0};
+
 void Player::set_name(string n)
 {
     name = n;
@@ -26,11 +29,17 @@ Player::Player(string name, int health, int xp)
     // name = name;
     // health = health;
     // xp = xp;
+    ++num_players;
     cout << "Three args constructor called"<< endl; 
 }
 
+int Player::get_num_players()
+{
+    return num_players;
+}
 Player::~Player()
 {
+    --num_players;
     cout << "Destructor called for " << name << endl; 
 }
 
@@ -47,8 +56,8 @@ int Player::get_xp() const
     return xp;
 }
 Player::Player(const Player &source)
-    :name{source.name}, health{source.health}, xp{source.xp}
-    // :Player{source.name,source.health,source.xp}
+    // :name{source.name}, health{source.health}, xp{source.xp}
+    :Player{source.name,source.health,source.xp}
     {
         cout<<"In copy Constructor"<< endl;
     }
