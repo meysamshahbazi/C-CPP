@@ -81,17 +81,147 @@ CMakeFiles/smart-ptr.dir/main.cpp.o.provides: CMakeFiles/smart-ptr.dir/main.cpp.
 CMakeFiles/smart-ptr.dir/main.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/main.cpp.o
 
 
+CMakeFiles/smart-ptr.dir/Account.cpp.o: CMakeFiles/smart-ptr.dir/flags.make
+CMakeFiles/smart-ptr.dir/Account.cpp.o: ../Account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/smart-ptr.dir/Account.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smart-ptr.dir/Account.cpp.o -c /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Account.cpp
+
+CMakeFiles/smart-ptr.dir/Account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smart-ptr.dir/Account.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Account.cpp > CMakeFiles/smart-ptr.dir/Account.cpp.i
+
+CMakeFiles/smart-ptr.dir/Account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smart-ptr.dir/Account.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Account.cpp -o CMakeFiles/smart-ptr.dir/Account.cpp.s
+
+CMakeFiles/smart-ptr.dir/Account.cpp.o.requires:
+
+.PHONY : CMakeFiles/smart-ptr.dir/Account.cpp.o.requires
+
+CMakeFiles/smart-ptr.dir/Account.cpp.o.provides: CMakeFiles/smart-ptr.dir/Account.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Account.cpp.o.provides.build
+.PHONY : CMakeFiles/smart-ptr.dir/Account.cpp.o.provides
+
+CMakeFiles/smart-ptr.dir/Account.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/Account.cpp.o
+
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o: CMakeFiles/smart-ptr.dir/flags.make
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o: ../Trust_Account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o -c /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Trust_Account.cpp
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smart-ptr.dir/Trust_Account.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Trust_Account.cpp > CMakeFiles/smart-ptr.dir/Trust_Account.cpp.i
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smart-ptr.dir/Trust_Account.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Trust_Account.cpp -o CMakeFiles/smart-ptr.dir/Trust_Account.cpp.s
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.requires:
+
+.PHONY : CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.requires
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.provides: CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.provides.build
+.PHONY : CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.provides
+
+CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o
+
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o: CMakeFiles/smart-ptr.dir/flags.make
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o: ../Checking_Account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o -c /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Checking_Account.cpp
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smart-ptr.dir/Checking_Account.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Checking_Account.cpp > CMakeFiles/smart-ptr.dir/Checking_Account.cpp.i
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smart-ptr.dir/Checking_Account.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Checking_Account.cpp -o CMakeFiles/smart-ptr.dir/Checking_Account.cpp.s
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.requires:
+
+.PHONY : CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.requires
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.provides: CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.provides.build
+.PHONY : CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.provides
+
+CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o
+
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o: CMakeFiles/smart-ptr.dir/flags.make
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o: ../Savings_Account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o -c /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Savings_Account.cpp
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smart-ptr.dir/Savings_Account.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Savings_Account.cpp > CMakeFiles/smart-ptr.dir/Savings_Account.cpp.i
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smart-ptr.dir/Savings_Account.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/Savings_Account.cpp -o CMakeFiles/smart-ptr.dir/Savings_Account.cpp.s
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.requires:
+
+.PHONY : CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.requires
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.provides: CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.provides.build
+.PHONY : CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.provides
+
+CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o
+
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.o: CMakeFiles/smart-ptr.dir/flags.make
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.o: ../I_Printable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/smart-ptr.dir/I_Printable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smart-ptr.dir/I_Printable.cpp.o -c /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/I_Printable.cpp
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smart-ptr.dir/I_Printable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/I_Printable.cpp > CMakeFiles/smart-ptr.dir/I_Printable.cpp.i
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smart-ptr.dir/I_Printable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/cpp-Beginner-to-Beyond/smart_ptr/I_Printable.cpp -o CMakeFiles/smart-ptr.dir/I_Printable.cpp.s
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.requires:
+
+.PHONY : CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.requires
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.provides: CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.provides.build
+.PHONY : CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.provides
+
+CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.provides.build: CMakeFiles/smart-ptr.dir/I_Printable.cpp.o
+
+
 # Object files for target smart-ptr
 smart__ptr_OBJECTS = \
-"CMakeFiles/smart-ptr.dir/main.cpp.o"
+"CMakeFiles/smart-ptr.dir/main.cpp.o" \
+"CMakeFiles/smart-ptr.dir/Account.cpp.o" \
+"CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o" \
+"CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o" \
+"CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o" \
+"CMakeFiles/smart-ptr.dir/I_Printable.cpp.o"
 
 # External object files for target smart-ptr
 smart__ptr_EXTERNAL_OBJECTS =
 
 smart-ptr: CMakeFiles/smart-ptr.dir/main.cpp.o
+smart-ptr: CMakeFiles/smart-ptr.dir/Account.cpp.o
+smart-ptr: CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o
+smart-ptr: CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o
+smart-ptr: CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o
+smart-ptr: CMakeFiles/smart-ptr.dir/I_Printable.cpp.o
 smart-ptr: CMakeFiles/smart-ptr.dir/build.make
 smart-ptr: CMakeFiles/smart-ptr.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable smart-ptr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable smart-ptr"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/smart-ptr.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +230,11 @@ CMakeFiles/smart-ptr.dir/build: smart-ptr
 .PHONY : CMakeFiles/smart-ptr.dir/build
 
 CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/main.cpp.o.requires
+CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/Account.cpp.o.requires
+CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o.requires
+CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o.requires
+CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o.requires
+CMakeFiles/smart-ptr.dir/requires: CMakeFiles/smart-ptr.dir/I_Printable.cpp.o.requires
 
 .PHONY : CMakeFiles/smart-ptr.dir/requires
 

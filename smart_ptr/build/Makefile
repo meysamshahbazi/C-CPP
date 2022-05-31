@@ -123,6 +123,141 @@ smart-ptr/fast:
 	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/build
 .PHONY : smart-ptr/fast
 
+Account.o: Account.cpp.o
+
+.PHONY : Account.o
+
+# target to build an object file
+Account.cpp.o:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Account.cpp.o
+.PHONY : Account.cpp.o
+
+Account.i: Account.cpp.i
+
+.PHONY : Account.i
+
+# target to preprocess a source file
+Account.cpp.i:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Account.cpp.i
+.PHONY : Account.cpp.i
+
+Account.s: Account.cpp.s
+
+.PHONY : Account.s
+
+# target to generate assembly for a file
+Account.cpp.s:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Account.cpp.s
+.PHONY : Account.cpp.s
+
+Checking_Account.o: Checking_Account.cpp.o
+
+.PHONY : Checking_Account.o
+
+# target to build an object file
+Checking_Account.cpp.o:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Checking_Account.cpp.o
+.PHONY : Checking_Account.cpp.o
+
+Checking_Account.i: Checking_Account.cpp.i
+
+.PHONY : Checking_Account.i
+
+# target to preprocess a source file
+Checking_Account.cpp.i:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Checking_Account.cpp.i
+.PHONY : Checking_Account.cpp.i
+
+Checking_Account.s: Checking_Account.cpp.s
+
+.PHONY : Checking_Account.s
+
+# target to generate assembly for a file
+Checking_Account.cpp.s:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Checking_Account.cpp.s
+.PHONY : Checking_Account.cpp.s
+
+I_Printable.o: I_Printable.cpp.o
+
+.PHONY : I_Printable.o
+
+# target to build an object file
+I_Printable.cpp.o:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/I_Printable.cpp.o
+.PHONY : I_Printable.cpp.o
+
+I_Printable.i: I_Printable.cpp.i
+
+.PHONY : I_Printable.i
+
+# target to preprocess a source file
+I_Printable.cpp.i:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/I_Printable.cpp.i
+.PHONY : I_Printable.cpp.i
+
+I_Printable.s: I_Printable.cpp.s
+
+.PHONY : I_Printable.s
+
+# target to generate assembly for a file
+I_Printable.cpp.s:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/I_Printable.cpp.s
+.PHONY : I_Printable.cpp.s
+
+Savings_Account.o: Savings_Account.cpp.o
+
+.PHONY : Savings_Account.o
+
+# target to build an object file
+Savings_Account.cpp.o:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Savings_Account.cpp.o
+.PHONY : Savings_Account.cpp.o
+
+Savings_Account.i: Savings_Account.cpp.i
+
+.PHONY : Savings_Account.i
+
+# target to preprocess a source file
+Savings_Account.cpp.i:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Savings_Account.cpp.i
+.PHONY : Savings_Account.cpp.i
+
+Savings_Account.s: Savings_Account.cpp.s
+
+.PHONY : Savings_Account.s
+
+# target to generate assembly for a file
+Savings_Account.cpp.s:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Savings_Account.cpp.s
+.PHONY : Savings_Account.cpp.s
+
+Trust_Account.o: Trust_Account.cpp.o
+
+.PHONY : Trust_Account.o
+
+# target to build an object file
+Trust_Account.cpp.o:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Trust_Account.cpp.o
+.PHONY : Trust_Account.cpp.o
+
+Trust_Account.i: Trust_Account.cpp.i
+
+.PHONY : Trust_Account.i
+
+# target to preprocess a source file
+Trust_Account.cpp.i:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Trust_Account.cpp.i
+.PHONY : Trust_Account.cpp.i
+
+Trust_Account.s: Trust_Account.cpp.s
+
+.PHONY : Trust_Account.s
+
+# target to generate assembly for a file
+Trust_Account.cpp.s:
+	$(MAKE) -f CMakeFiles/smart-ptr.dir/build.make CMakeFiles/smart-ptr.dir/Trust_Account.cpp.s
+.PHONY : Trust_Account.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +294,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... smart-ptr"
 	@echo "... edit_cache"
+	@echo "... Account.o"
+	@echo "... Account.i"
+	@echo "... Account.s"
+	@echo "... Checking_Account.o"
+	@echo "... Checking_Account.i"
+	@echo "... Checking_Account.s"
+	@echo "... I_Printable.o"
+	@echo "... I_Printable.i"
+	@echo "... I_Printable.s"
+	@echo "... Savings_Account.o"
+	@echo "... Savings_Account.i"
+	@echo "... Savings_Account.s"
+	@echo "... Trust_Account.o"
+	@echo "... Trust_Account.i"
+	@echo "... Trust_Account.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
