@@ -1,3 +1,0 @@
-/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles/rebuild_cache.dir
-/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles/smart-ptr.dir
-/home/meysam/cpp-Beginner-to-Beyond/smart_ptr/build/CMakeFiles/edit_cache.dir

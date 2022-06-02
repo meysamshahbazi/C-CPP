@@ -11,5 +11,6 @@ project(smart-ptr)
 
 # Declare the executable target built from your sources
 
+set (CMAKE_CXX_STANDARD 14)
 
 add_executable(${PROJECT_NAME} main.cpp Account.cpp Trust_Account.cpp Checking_Account.cpp Savings_Account.cpp I_Printable.cpp)
