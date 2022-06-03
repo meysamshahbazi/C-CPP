@@ -56,6 +56,43 @@ public:
      T2 second;
  };
 
+ template<typename T, int N>
+ class Array
+ {
+     int size {N};
+     T value[N];
+     friend std::ostream & operator<<(std::ostream &os, const Array<T,N> &arr)
+     {
+         os<<"[ ";
+         for (const auto &v:arr.value)
+            os<<v<<" ";
+        os<<"]"<<std::endl;
+     }
+
+public:
+    Array() = default;
+    Array(T init_val)
+    {
+        for(auto &item: value)
+            item = init_val;
+        // for(int i=0;i<N;i++)
+        //     value[i] = init_val;
+    }
+    void fill(T val)
+    {
+        for(auto &item: value)
+            item = val;   
+    }
+    int get_size() const 
+    {
+        return size;
+    }
+     T & operator[](int index)
+     {
+         return value[index];
+     }
+ };
+
 
 int main ()
 {
@@ -102,16 +139,44 @@ int main ()
          std::cout << item.get_name() << " " << item.get_value() << std::endl;
     }
 
-    std::cout<<"==================================================="<<std::endl;
-
-     std::cout << "\n================================" << std::endl;
     My_Pair <std::string, int> pair1 {"Frank", 100};
     My_Pair <int, double> pair2 {124, 13.6};
 
     std::cout << pair1.first << ", " << pair1.second << std::endl;
     std::cout << pair2.first << ", " << pair2.second << std::endl;
 
+    std::cout<<"==================================================="<<std::endl;
 
+    // Array<int,5> nums;
+    Array<int,5> nums{2};
+
+    std::cout << "The size of nums is: "<< nums.get_size() << std::endl;
+    std::cout << nums << std::endl;
+
+    nums.fill(0);
+    std::cout << "The size of nums is: "<< nums.get_size() << std::endl;
+    std::cout << nums << std::endl;
+
+    nums.fill(10);
+    std::cout << nums << std::endl;
+
+    nums[0] = 1000;
+    nums[3] = 2000;
+    std::cout << nums << std::endl;
+    
+    Array<int, 100> nums2 {1};
+    std::cout << "The size of nums2 is: "<< nums2.get_size() << std::endl;
+    std::cout << nums2 << std::endl;
+
+    Array<std::string, 10> strings(std::string{"Frank"});
+    std::cout << "The size of strings is: "<< strings.get_size() << std::endl;
+    std::cout << strings << std::endl;
+
+    strings[0] = std::string{"Larry"};
+    std::cout << strings << std::endl;
+    
+    strings.fill(std::string{"X"});
+    std::cout << strings<< std::endl;
 
 
     return 0;
