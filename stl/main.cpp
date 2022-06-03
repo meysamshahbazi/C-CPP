@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 // using namespace std;
 
@@ -25,7 +26,7 @@ void my_swap(T &a, T &b)
  {
     std::string name;
     int age;
-    bool operator<(const Person & rhs)
+    bool operator<(const Person & rhs) const
     {
         return this->age < rhs.age;
     }
@@ -37,6 +38,25 @@ void my_swap(T &a, T &b)
      return os;
  }
  
+template <typename T>
+class Item{
+private:
+    std::string name;
+    T value;
+public:
+    Item(std::string name,T value): name{name}, value{value} {}
+    std::string get_name() const { return name;}
+    T get_value() const {return value;}
+
+ };
+
+ template<typename T1, typename T2>
+ class MyPair{
+     T1 first;
+     T2 second;
+ };
+
+
 int main ()
 {
     int a {3};
@@ -47,7 +67,7 @@ int main ()
     std::cout<<"a is: "<<a<<", b is: "<<b<<std::endl;
 
     Person p1 {"Curly", 15};
-    Person p2 {"Moe", 30};
+    Person p2 {"Moe", 12};
 
     func(p1,p2);
 
@@ -55,6 +75,37 @@ int main ()
 
     std::cout<<"Min age is "<<p3<<std::endl;
     
+    std::cout<<"==================================================="<<std::endl;
+
+    Item<int> it1{"Meysam",21};
+    
+    std::cout << it1.get_name() << " " << it1.get_value() << std::endl;
+
+    Item <std::string> it2{"MAMMAD","ASGHAR"};
+    std::cout << it2.get_name() << " " << it2.get_value() << std::endl;
+
+    Item<Item<std::string>> it3{"franck",Item<std::string>{"c++","senior"}};
+
+     std::cout << it3.get_name() << " " 
+                    << it3.get_value().get_name() << " "
+                    << it3.get_value().get_value() << std::endl;
+    
+    std::cout<<"==================================================="<<std::endl;
+
+    std::vector<Item<double>> vec {};
+    vec.push_back (Item<double>("Larry", 100.0));
+    vec.push_back (Item<double>("Moe", 200.0));
+    vec.push_back (Item<double>("Curly",300.0));
+
+    for (const auto &item:vec)
+    {
+         std::cout << item.get_name() << " " << item.get_value() << std::endl;
+    }
+
+    std::cout<<"==================================================="<<std::endl;
+
+    
+
 
 
     return 0;
