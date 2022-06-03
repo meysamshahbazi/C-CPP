@@ -19,8 +19,7 @@ Source-codes-Section-21-Lambda-Expressions.zip
 Source-codes-Section-23-Bonus-Section-Enumerations.zip
 EX_*
 */build/*
- 
-
-
 */.vscode/*
 .vscode/*
+.vscode/settings.json
+
