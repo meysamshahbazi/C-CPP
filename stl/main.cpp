@@ -51,7 +51,7 @@ public:
  };
 
  template<typename T1, typename T2>
- class MyPair{
+ struct My_Pair{
      T1 first;
      T2 second;
  };
@@ -104,7 +104,13 @@ int main ()
 
     std::cout<<"==================================================="<<std::endl;
 
-    
+     std::cout << "\n================================" << std::endl;
+    My_Pair <std::string, int> pair1 {"Frank", 100};
+    My_Pair <int, double> pair2 {124, 13.6};
+
+    std::cout << pair1.first << ", " << pair1.second << std::endl;
+    std::cout << pair2.first << ", " << pair2.second << std::endl;
+
 
 
 
