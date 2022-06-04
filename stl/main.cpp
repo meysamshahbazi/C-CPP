@@ -127,8 +127,28 @@ void test1()
 
     it = num1.end() -1;
     std::cout<< *it <<std::endl;
+}
 
+void test2()
+{
+    std::cout<<"=====================TEST2========================="<<std::endl;
+    std::vector<int> num1  {1,2,3,4,5};
+    
+    auto it = num1.begin();
 
+    while( it != num1.end())
+    {
+        std::cout<<*it<<std::endl;
+        it++;
+    }
+
+    it = num1.begin();
+    while(it != num1.end())
+    {
+        *it =0;
+        it++;
+    }
+    display(num1);
 }
 
 
@@ -219,6 +239,7 @@ int main ()
     std::cout << strings<< std::endl;
     std::cout<<"==================================================="<<std::endl;
     test1();
+    test2();
 
 
     return 0;
