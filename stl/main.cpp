@@ -143,12 +143,97 @@ void test2()
     }
 
     it = num1.begin();
+    // 
     while(it != num1.end())
     {
-        *it =0;
-        it++;
+        
+        *(it++) =0;
+        // it++; 
+    }
+
+    display(num1);
+
+    it = num1.end();
+    while(it != num1.begin())
+    {
+        it--;
+        *it =0; 
     }
     display(num1);
+}
+
+void test3()
+{
+    std::cout<<"=====================TEST3========================="<<std::endl;
+    std::vector<int> num1  {1,2,3,4,5}; 
+    // std::vector<int>::const_iterator it = num1.begin();
+
+    auto it = num1.cbegin();
+
+    while( it != num1.end())
+    {
+        std::cout<<*it<<std::endl;
+        it++;
+    }
+
+    it = num1.begin();
+    // 
+    while(it != num1.end())
+    {
+        
+        // *it =0;
+        it++; 
+    }
+
+    display(num1);
+}
+
+void test4()
+{
+    std::cout<<"=====================TEST4========================="<<std::endl;
+    std::vector<int> vec{1,2,3,4,5}; 
+
+    auto it1 = vec.rbegin();
+
+    while(it1 !=vec.rend())
+    {
+        std::cout<<*it1<<std::endl;
+        it1++;
+    } 
+    std::list<std::string> name{"Larry","Moe","curly"};
+    auto it2 = name.crbegin();
+
+    std::cout<<*it2<<std::endl;
+    it2++;
+    std::cout<<*it2<<std::endl;
+
+    std::map<std::string,std::string> favorites
+    {
+        {"frank","c++"},
+        {"bill","java"},
+        {"james","docker"}
+    };
+    auto it3 = favorites.begin();
+    while(it3 != favorites.end())
+    {
+        std::cout<<it3->first<<":"<<it3->second<<std::endl;
+        it3++;
+    }
+}
+
+void test5()
+{
+    std::cout<<"=====================TEST4========================="<<std::endl;
+    std::vector<int> vec {1,2,3,4,5,6,7,8,9,10};
+    auto start = vec.begin()+2;
+    auto end = vec.end()-4;
+
+    while(start !=end)
+    {
+        std::cout<<*start<<std::endl;
+        start++;
+    } 
+
 }
 
 
@@ -240,6 +325,10 @@ int main ()
     std::cout<<"==================================================="<<std::endl;
     test1();
     test2();
+    test3();
+    test4();
+    test5();
+    
 
 
     return 0;
