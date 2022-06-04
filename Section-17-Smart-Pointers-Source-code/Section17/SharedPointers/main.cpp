@@ -27,33 +27,33 @@ int main() {
    
     // use_count – the number of shared_ptr objects
     // managing the heap object
-   
-//    std::shared_ptr<int> p1 {new int {100} };
-//    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 1
-//   
-//    std::shared_ptr<int> p2 { p1 };			// shared ownwership
-//    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 2
-//
-//    p1.reset();	// decrement the use_count; p1 is nulled out
-//    std::cout << "Use count: "<< p1.use_count() << std::endl; 		// 0 
-//    std::cout << "Use count: "<< p2.use_count() << std::endl; 		// 1
     
-//    std::cout << "\n==========================================" << std::endl;
-//    std::shared_ptr<Test> ptr = std::make_shared<Test>(100);
-//    func(ptr);
-//    std::cout << "Use count: " << ptr.use_count() << std::endl;
-//    {
-//        std::shared_ptr<Test> ptr1 = ptr;
-//        std::cout << "Use count: " << ptr.use_count() << std::endl;
-//        {
-//            std::shared_ptr<Test> ptr2 = ptr;
-//            std::cout << "Use count: " << ptr.use_count() << std::endl;      
-//            ptr.reset();
-//        }
-//        std::cout << "Use count: " << ptr.use_count() << std::endl;      
-//
-//    }
-//    std::cout << "Use count: " << ptr.use_count() <<std:: endl;
+    std::shared_ptr<int> p1 {new int {100} };
+    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 1
+    
+    std::shared_ptr<int> p2 { p1 };			// shared ownwership
+    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 2
+
+    p1.reset();	// decrement the use_count; p1 is nulled out
+    std::cout << "Use count: "<< p1.use_count() << std::endl; 		// 0 
+    std::cout << "Use count: "<< p2.use_count() << std::endl; 		// 1
+    
+   std::cout << "\n==========================================" << std::endl;
+   std::shared_ptr<Test> ptr = std::make_shared<Test>(100);
+   func(ptr);
+   std::cout << "Use count: " << ptr.use_count() << std::endl;
+   {
+       std::shared_ptr<Test> ptr1 = ptr;
+       std::cout << "Use count: " << ptr.use_count() << std::endl;
+       {
+           std::shared_ptr<Test> ptr2 = ptr;
+           std::cout << "Use count: " << ptr.use_count() << std::endl;      
+           ptr.reset();
+       }
+       std::cout << "Use count: " << ptr.use_count() << std::endl;      
+
+   }
+   std::cout << "Use count: " << ptr.use_count() <<std:: endl;
 
     std::cout << "\n==========================================" << std::endl;
     std::shared_ptr<Account> acc1 = std::make_shared<Trust_Account>("Larry", 10000, 3.1);

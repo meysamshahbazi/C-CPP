@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 # Define project name
-project(smart-ptr)
+project(eh)
 
 
 # include_directories(${CMAKE_SOURCE_DIR}/src/)
@@ -13,4 +13,4 @@ project(smart-ptr)
 
 set (CMAKE_CXX_STANDARD 14)
 
-add_executable(${PROJECT_NAME} main.cpp Account.cpp Trust_Account.cpp Checking_Account.cpp Savings_Account.cpp I_Printable.cpp)
+add_executable(${PROJECT_NAME} main.cpp  Account.cpp Trust_Account.cpp Checking_Account.cpp Savings_Account.cpp)
