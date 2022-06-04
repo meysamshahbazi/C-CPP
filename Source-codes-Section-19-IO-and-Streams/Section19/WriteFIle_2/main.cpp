@@ -12,7 +12,8 @@ int main() {
         std::cerr << "Error opening input file" << std::endl;
         return 1;
     }
-     if (!out_file) {
+    
+    if (!out_file) {
         std::cerr << "Error opening output file" << std::endl;
         return 1;
     }

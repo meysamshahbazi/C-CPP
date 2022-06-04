@@ -21,9 +21,10 @@ public:
 
 using namespace std;
 
-int main() {
-   // Test *t1 = new Test {1000};
-   //  delete t1;
+int main() 
+{
+    Test *t1 = new Test {1000};
+    delete t1;
 //   std::unique_ptr<Test> t1 {new Test{100}};
 //   std::unique_ptr<Test> t2 = std::make_unique<Test>(1000);
 //   
@@ -47,4 +48,6 @@ int main() {
             std::cout << *acc << std::endl;
        return 0;
 }
+
+
 
