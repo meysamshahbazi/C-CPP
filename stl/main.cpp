@@ -10,10 +10,6 @@
 #include <numeric>
 
 
- 
-
-// using namespace std;
-
 template <typename T>
 T min(T a, T b){
     return (a < b)? a:b;
@@ -699,7 +695,7 @@ void test211()
     }
 
     display(vec1);
-    
+
 }
 
 int main ()
