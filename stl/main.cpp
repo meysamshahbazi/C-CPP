@@ -7,6 +7,7 @@
 #include <list>
 #include <algorithm>
 #include <cctype>
+#include <numeric>
 
 
  
@@ -352,6 +353,129 @@ void string_transform_test()
 
 }
 
+void display(const std::array<int,5> &arr )
+{
+    std::cout<<"[ ";
+    for (auto &a : arr)
+        std::cout<<a<<" ";
+    std::cout<<"]"<<std::endl;
+}
+
+void test11()
+{
+    std::cout << "\nTest11 =========================================" << std::endl;
+    std::array<int,5> arr1 = {1,2,3,4,5};
+    std::array<int,5> arr2;
+
+    display(arr1);
+    display(arr2);
+
+    arr2 = {10,20,30,40,50};
+    display(arr1);
+    display(arr2);
+
+    std::cout<< "Size of arr1 is: " <<arr1.size()<<std::endl;
+    std::cout<< "Size of arr2 is: " <<arr2.size()<<std::endl;
+
+    arr1[0] = 1000;
+    arr1.at(1) = 2000;
+    display(arr1);
+
+    std::cout << "Front of arr2: " << arr2.front()<<std::endl;
+    std::cout << "Back of arr2: " << arr2.back()<<std::endl;
+}
+void test12()
+{
+    std::cout << "\nTest12 =========================================" << std::endl;
+    std::array<int,5> arr1 = {1,2,3,4,5};
+    std::array<int,5> arr2 = {10,20,30,40,50};
+
+    display(arr1);
+    display(arr2);
+
+    arr1.fill(0);
+
+    display(arr1);
+    display(arr2);
+
+    arr1.swap(arr2);
+
+    display(arr1);
+    display(arr2);
+}
+
+void test13()
+{
+    std::cout << "\nTest13 =========================================" << std::endl;
+    std::array<int,5> arr1 = {1,2,3,4,5};
+
+    int * ptr = arr1.data();
+    std::cout<<ptr<<std::endl;
+    *ptr = 1000;
+    display(arr1);
+}
+
+void test14()
+{
+    std::cout << "\nTest14 =========================================" << std::endl;
+    std::array<int,5> arr1 = {2,1,4,5,3}; 
+    display(arr1);
+
+    std::sort(arr1.begin(),arr1.end());
+    display(arr1);
+
+}
+
+void test15()
+{
+    std::cout << "\nTest15 =========================================" << std::endl;
+    std::array<int,5> arr1 = {2,1,4,5,3}; 
+
+    std::array<int,5>::iterator min_num = std::min_element(arr1.begin(),arr1.end());
+    auto max_num = std::max_element(arr1.begin(),arr1.end());
+    std::cout << "min: " << *min_num << " , max: " << *max_num << std::endl;
+
+}
+
+void test16()
+{
+    std::cout << "\nTest16 =========================================" << std::endl;
+    std::array<int, 5> arr1 {2,1,3,3,5};
+
+    auto adjacent = std::adjacent_find(arr1.begin(),arr1.end());
+    if (adjacent != arr1.end() )
+        std::cout << "Adjacent element found with value: " << *adjacent <<std::endl;
+    else 
+        std::cout << "No adjacent elements found" << std::endl;
+
+}
+
+void test17() 
+{
+    std::cout << "\nTest17 =========================================" << std::endl;
+    std::array<int, 5> arr1 {2,1,3,3,5};
+
+    int sum = std::accumulate(arr1.begin(),arr1.end(),0);
+    std::cout << "Sum of the elements in arr1 is: " << sum << std::endl;
+}
+
+void test18()
+{
+    std::cout << "\nTest18 =========================================" << std::endl;
+    std::array<int, 10> arr1 {1,2,3,1,2,3,3,3,3,3};
+
+    int count = std::count(arr1.begin(),arr1.end(),3);
+    std::cout << "Found 3 : " << count << " times" << std::endl;
+}
+void test19()
+{
+    std::cout << "\nTest19 =========================================" << std::endl;
+    std::array<int, 10> arr1 {1, 2, 3, 50, 60, 70, 80, 200, 300 ,400};
+
+    int count = std::count_if(arr1.begin(),arr1.end(),
+    [](int x) { return x>10 && x<200;});
+    std::cout << "Found  " << count << " matches" << std::endl;
+}
 
 
 int main ()
@@ -455,6 +579,15 @@ int main ()
     all_of_test();
     string_transform_test();
 
+    test11();
+    test12();
+    test13();
+    test14();
+    test15();
+    test16();
+    test17();
+    test18();
+    test19();
 
     return 0;
 }
