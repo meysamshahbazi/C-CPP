@@ -9,6 +9,8 @@
 #include <cctype>
 #include <numeric>
 #include <deque>
+#include <iterator>
+
 
 
 template <typename T>
@@ -43,7 +45,8 @@ void my_swap(T &a, T &b)
     int age;
     friend std::ostream &operator<<(std::ostream &os,const Personn &p);
 public:
-    Personn() = default;
+    // Personn() = default;
+    Personn(): name{"Unkhown"},age{0} {}
     Personn(std::string name, int age)
         :name{name},age{age} {}
     bool operator<(const Personn &rhs) const 
@@ -799,6 +802,123 @@ void test35()
     display(d);
 }
 
+template <typename T>
+void display(const std::list<T> &l) 
+{
+    std::cout<<"[[ ";
+    for (const auto &elem : l)
+        std::cout << elem <<" ";
+
+    std::cout<<"]]"<<std::endl;
+}
+
+void test41()
+{
+    std::cout << "\nTest41 =========================" << std::endl;
+    std::list<int> l1 {1,2,3,4,5};
+    display(l1);
+    std::list<std::string> l2;
+    l2.push_back("BACK");
+    l2.push_front("FRONT");
+    display(l2);
+    std::list<int> l3;
+    l3 = {1,2,3,4,5,6,7,8,9,10};
+    display(l3);
+    std::list<int> l4(10,100);
+    display(l4);
+}
+
+void test42()
+{
+    std::cout << "\nTest42 =========================" << std::endl;
+    std::list<int> l{1,2,3,4,5,6,7,8,9,10};
+    display(l);
+    std::cout<<"SIZE: "<<l.size()<<std::endl;
+    std::cout<<"FRONT: "<<l.front()<<std::endl;
+    std::cout<<"BACK: "<<l.back()<<std::endl;
+
+    l.clear();
+    display(l);
+    std::cout<<"SIZE: "<<l.size()<<std::endl;
+}
+
+void test43()
+{
+    std::cout << "\nTest43 =========================" << std::endl;
+    std::list<int> l {1,2,3,4,5,6,7,8,9,10};
+    display(l);
+
+    l.resize(5);
+    display(l);
+
+    l.resize(10);
+    display(l);
+    std::list<Personn> persons;
+    persons.resize(10);
+    display(persons);
+}
+
+void test44()
+{
+    std::cout << "\nTest44 =========================" << std::endl;
+    std::list<int> l {1,2,3,4,5,6,7,8,9,10};
+    display(l);
+
+    auto it = std::find(l.begin(),l.end(),5);
+
+    if( it != l.end() )
+        l.insert(it,100);
+
+    display(l);
+
+    std::list<int> l2 {1000,2000,3000};
+
+    l.insert(it,l2.begin(),l2.end());
+    display(l);
+    std::advance(it,-4);
+    std::cout<<*it<<std::endl;
+
+    l.erase(it);
+
+    display(l);
+
+}
+
+void test45()
+{
+    std::cout << "\nTest45 =========================" << std::endl;
+    std::list<Personn>  stooges {
+        {"Larry", 18},
+        {"Moe", 25},
+        {"Curly", 17}
+    };
+    display(stooges);
+    stooges.emplace_back("TMI",11);
+    display(stooges);
+
+    auto it = std::find(stooges.begin(),stooges.end(),Personn{"Moe", 25});
+
+    if (it != stooges.end())
+        stooges.emplace(it,"frank",14);
+    display(stooges);
+}
+
+void test46()
+{
+    std::cout << "\nTest46 =========================" << std::endl;
+    std::list<Personn>  stooges {
+        {"Larry", 18},
+        {"Moe", 25},
+        {"Curly", 17}
+    };
+    display(stooges);
+    stooges.sort();
+    // std::sort(stooges.begin(),stooges.end());
+    display(stooges);
+}
+
+
+
 
 int main ()
 {
@@ -928,6 +1048,13 @@ int main ()
     test33();
     test34();
     test35();
+
+    test41();
+    test42();
+    test43();
+    test44();
+    test45();
+    test46();
 
     return 0;
 }
