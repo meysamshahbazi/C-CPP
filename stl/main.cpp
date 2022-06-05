@@ -44,6 +44,7 @@ void my_swap(T &a, T &b)
  class Personn{
     std::string name;
     int age;
+    friend std::ostream &operator<<(std::ostream &os,const Personn &p);
 public:
     Personn() = default;
     Personn(std::string name, int age)
@@ -57,7 +58,11 @@ public:
         return (this->name==rhs.name && this->age == rhs.age);
     }
  };
-
+std::ostream &operator<<(std::ostream &os,const Personn &p) 
+{
+    os<<p.name<<":"<<p.age;
+    return os;
+}
  std::ostream & operator<<(std::ostream & os, const Person &p)
  {
      os<<p.name;
@@ -120,13 +125,24 @@ public:
      }
  };
 
- void display(const std::vector<int> &vec) {
+
+template<typename T>
+void display(const std::vector<T> &vec) {
     std::cout << "[ ";
     for (auto const &i: vec) {
         std::cout << i << " ";
     }
     std::cout << "]" << std::endl;
 }
+
+void display2(const std::vector<int> &vec)
+{
+    std::cout<<"[ ";
+    std::for_each(vec.begin(),vec.end(),
+        [] (int x){std::cout<<x<<" ";});
+    std::cout<<"]"<<std::endl;
+}
+
 
 
 void test1()
@@ -477,6 +493,214 @@ void test19()
     std::cout << "Found  " << count << " matches" << std::endl;
 }
 
+void test21(){
+    std::cout << "\nTest21 =========================" << std::endl;
+    
+    std::vector<int> vec{1,2,3,4,5};
+    display(vec);
+    
+    vec = {2,4,6,8};
+
+    display2(vec);
+    std::vector<int> vec1(10,20);
+    display2(vec1);
+}
+
+void test22()
+{
+    std::cout << "\nTest22 =========================" << std::endl;
+    std::vector<int> vec{1,2,3,4,5};
+    display2(vec);
+    std::cout<<"vec size: "<<vec.size()<<std::endl;
+    std::cout<<"vec max size: "<<vec.max_size()<<std::endl;
+    std::cout<<"vec capacity: "<<vec.capacity()<<std::endl;
+
+    vec.push_back(6);
+
+    std::cout<<"vec size: "<<vec.size()<<std::endl;
+    std::cout<<"vec max size: "<<vec.max_size()<<std::endl;
+    std::cout<<"vec capacity: "<<vec.capacity()<<std::endl;
+
+    vec.shrink_to_fit();
+    display2(vec);
+    std::cout<<"vec size: "<<vec.size()<<std::endl;
+    std::cout<<"vec max size: "<<vec.max_size()<<std::endl;
+    std::cout<<"vec capacity: "<<vec.capacity()<<std::endl;
+
+    vec.reserve(100);
+    display2(vec);
+    std::cout<<"vec size: "<<vec.size()<<std::endl;
+    std::cout<<"vec max size: "<<vec.max_size()<<std::endl;
+    std::cout<<"vec capacity: "<<vec.capacity()<<std::endl;
+}
+void test23()
+{
+    std::cout << "\nTest23 =========================" << std::endl;
+    std::vector<int> vec{1,2,3,4,5};
+    display2(vec);
+
+    vec[0] = 100;
+    vec.at(1) = 200;
+
+    display(vec);
+
+
+}
+void test24()
+{
+    std::cout << "\nTest24 =========================" << std::endl;
+
+    std::vector<Personn> stooges;
+
+    Personn p1{"Larry",18};
+    display(stooges);
+
+    stooges.push_back(p1);
+    display(stooges);
+
+    stooges.push_back({Personn{"Moe",23}});
+
+    display(stooges);
+    stooges.emplace_back("Curly",30);
+    display(stooges);
+
+}
+void test25()
+{
+    std::cout << "\nTest25 =========================" << std::endl;
+    std::vector<Person> stooges {
+        {"Larry", 18},
+        {"Moe", 25},
+        {"Curly", 30}
+    };
+    display(stooges);
+    std::cout<<"Front: "<<stooges.front()<<std::endl;
+    std::cout<<"Back: "<<stooges.back()<<std::endl;
+
+    stooges.pop_back();
+    display(stooges);
+}
+void test26()
+{
+    std::cout << "\nTest26 =========================" << std::endl;
+    std::vector<int> vec{1,2,3,4,5};
+    display2(vec);
+
+    vec.clear();
+    display(vec);
+
+    vec = {1,2,3,4,5,6,7,8,9,10};
+    display(vec);
+
+    vec.erase(vec.begin(),vec.begin()+2);
+    display(vec);
+
+    vec = {1,2,3,4,5,6,7,8,9,10};
+    display(vec);
+
+    auto it = vec.begin();
+    while (it != vec.end() )
+    {
+        if( *it%2 ==0)
+            vec.erase(it);
+        else   
+            it++;
+    }
+    display2(vec);
+}
+
+void test27()
+{
+    std::cout << "\nTest27 =========================" << std::endl;
+
+    std::vector<int> vec1 {1,2,3,4,5};
+    std::vector<int> vec2 {10,20,30,40,50};
+    
+    display(vec1);
+    display(vec2);
+
+    vec1.swap(vec2);
+    display(vec1);
+    display(vec2);
+
+}
+
+void test28()
+{
+    std::cout << "\nTest28 =========================" << std::endl;
+    std::vector<int> vec1 {1,21,3,40,12};    
+    
+    display(vec1);
+
+    std::sort(vec1.begin(),vec1.end());
+
+    display2(vec1);
+}
+
+void test29()
+{
+    std::cout << "\nTest29 =========================" << std::endl;
+    std::vector<int> vec1 {1,2,3,4,5};   
+    std::vector<int> vec2 {10,20};
+    
+    display(vec1); 
+    display(vec2);
+    std::cout << std::endl;
+
+    std::copy(vec1.begin(),vec1.end(),std::back_inserter(vec2));
+    display(vec1); 
+    display(vec2);
+
+    vec1 = {1,2,3,4,5,6,7,8,9,10};
+    vec2 = {10,20};
+    
+    display(vec1);
+    display(vec2);
+    std::copy_if(vec1.begin(),vec1.end(),std::back_inserter(vec2),
+    [](int x){return x%2 ==0;});
+    display(vec1); 
+    display(vec2);
+}
+
+void test210()
+{
+    std::cout << "\nTest210 =========================" << std::endl;
+    std::vector<int> vec1 {1,2,3,4,5};   
+    std::vector<int> vec2 {10,20,30,40,50};
+    std::vector<int> vec3;
+
+    std::transform(vec1.begin(),vec1.end(),vec2.begin(),
+    std::back_inserter(vec3),
+    [](int x, int y){ return x*y;});
+    display(vec1);
+    display(vec2);
+    display(vec3);
+
+}
+
+void test211()
+{
+    std::cout << "\nTest211 =========================" << std::endl;
+    std::vector<int> vec1 {1,2,3,4,5,6,7,8,9,10};
+    std::vector<int> vec2 {100,200,300,400};
+    
+    display(vec1);
+    display(vec2);
+
+    auto it = std::find(vec1.begin(),vec1.end(),5);
+    if (it != vec1.end()) 
+    {
+        std::cout<<"inserring... "<<std::endl;
+        vec1.insert(it,vec2.begin(),vec2.end());
+    }
+    else 
+    {
+        std::cout << "Sorry, 5 not found" << std::endl;   
+    }
+
+    display(vec1);
+    
+}
 
 int main ()
 {
@@ -588,6 +812,18 @@ int main ()
     test17();
     test18();
     test19();
+
+    test21();
+    test22();
+    test23();
+    test24();
+    test25();
+    test26();
+    test27();
+    test28();
+    test29();
+    test210();
+    test211();
 
     return 0;
 }
