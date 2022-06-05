@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cctype>
 #include <numeric>
+#include <deque>
 
 
 template <typename T>
@@ -697,6 +698,107 @@ void test211()
     display(vec1);
 
 }
+template<typename T>
+void display(const std::deque<T> &d)
+{
+    std::cout<<"{ ";
+    for (const auto &item:d )
+        std::cout<<item<<" ";
+    
+    std::cout<<"}"<<std::endl;
+}
+void test31()
+{
+    std::cout << "\nTest31 =========================" << std::endl;
+    std::deque<int> d {1,2,3,4,5};
+    display(d);
+    d = {5,6,7,8};
+    display(d);
+    
+    std::deque<int> d1(10,100);
+
+    display(d1);
+
+    d[0]= 100;
+    d.at(1) = 200;
+
+    display(d);
+}
+
+void test32()
+{
+    std::cout << "\nTest32 =========================" << std::endl;
+    std::deque<int> d {0,0,0};
+
+    d.push_back(10);
+    d.push_back(20);
+
+    display(d);
+
+    d.push_front(100);
+    d.push_front(200);
+
+    display(d);
+
+    std::cout<<"FRONT "<< d.front() << std::endl;
+    std::cout<<"back "<< d.back() << std::endl;
+    std::cout<<"SIZE "<< d.size()<< std::endl;
+}
+
+void test33()
+{
+    std::cout << "\nTest33 =========================" << std::endl;
+    std::vector<int> vec {1,2,3,4,5,6,7,8,9,10};
+    std::deque<int> d;
+
+    for(const auto & item: vec)
+    {
+        if (item %2 ==0 )
+            d.push_back(item);
+        else 
+            d.push_front(item);
+    }
+    display(d);
+
+}
+
+void test34()
+{
+    std::cout << "\nTest34 =========================" << std::endl;
+
+    std::vector<int> vec {1,2,3,4,5,6,7,8,9,10};
+    std::deque<int> d;
+
+    for (const auto & elem:vec)
+        d.push_front(elem);
+
+    display(d);
+
+    d.clear();
+
+    for (const auto & elem:vec)
+        d.push_back(elem);
+
+    display(d);
+
+
+}
+
+void test35()
+{
+    std::cout << "\nTest35 =========================" << std::endl;
+    std::vector<int> vec {1,2,3,4,5,6,7,8,9,10};
+    std::deque<int> d;
+
+    std::copy(vec.begin(),vec.end(),std::front_inserter(d));
+    display(d);
+
+    d.clear();
+    
+    std::copy(vec.begin(),vec.end(),std::back_inserter(d));
+    display(d);
+}
+
 
 int main ()
 {
@@ -820,6 +922,12 @@ int main ()
     test29();
     test210();
     test211();
+
+    test31();
+    test32();
+    test33();
+    test34();
+    test35();
 
     return 0;
 }
