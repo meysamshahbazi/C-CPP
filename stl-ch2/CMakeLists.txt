@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 # Define project name
-project(stl-ch1)
+project(stl-ch2)
 
 
 # include_directories(${CMAKE_SOURCE_DIR}/src/)

@@ -9,6 +9,9 @@
 #include <iomanip>
 #include <limits>
 
+
+using namespace std;
+
 class Song {
     friend std::ostream &operator<<(std::ostream &os, const Song &s);
     std::string name;
@@ -57,14 +60,16 @@ void display_menu() {
 void play_current_song(const Song &song) {
     // This function should display 
     // Playing: followed by the song that is playing
-   
-    std::cout << "You implement this function"<< std::endl;
+    cout<<song<<endl;
+    // std::cout << "You implement this function"<< std::endl;
 }
 
 void display_playlist(const std::list<Song> &playlist, const Song &current_song) {
     // This function should display the current playlist 
     // and then the current song playing.
-    
+    for (auto &s: playlist){
+        play_current_song(s);
+    }
     std::cout << "You implement this function" << std::endl;
 }
 
@@ -81,9 +86,45 @@ int main() {
     
     std::list<Song>::iterator current_song = playlist.begin();
     
-    std::cout << "To be implemented" << std::endl;
+    char c {};
+    while (c != 'Q')
+    {
+        display_playlist(playlist,*current_song);
+        cout<<"current song: \n"<< *current_song <<endl;
+        display_menu();
+        cin>>c;
+        c = toupper(c);
+        if(c == 'F')
+        {
+         current_song = playlist.begin();   
+        }
+        else if(c == 'N')
+        {   
+            current_song++;
+            if(current_song == playlist.end() ) 
+                current_song = playlist.begin();
+                
+        }
+        else if(c == 'P')
+        {
+            if(current_song ==playlist.begin() ) 
+                current_song = playlist.end();
+            current_song --;
+                
+        }
+        else if(c == 'A')
+        {
+            Song temp = Song("UNKON","UN",4);
+            playlist.insert(current_song,temp);
+        }
+        else if(c == 'L')
+        {
+            display_playlist(playlist,*current_song);
+        }
+    }
+    // std::cout << "To be implemented" << std::endl;
     // Your program logic goes here
 
-    std::cout << "Thanks for listening!" << std::endl;
+    // std::cout << "Thanks for listening!" << std::endl;
     return 0;
 }
