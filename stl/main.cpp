@@ -10,7 +10,7 @@
 #include <numeric>
 #include <deque>
 #include <iterator>
-
+#include <stack>
 
 
 template <typename T>
@@ -1080,7 +1080,17 @@ void test62()
 
 }
 
-
+template <typename T>
+void display(std::stack<T> s)
+{
+    std::cout<<"[ ";
+    while(!s.empty() )
+    {
+        std::cout<<s.top()<<" ";
+        s.pop();
+    }
+    std::cout<<" ]"<<std::endl;
+}
 int main ()
 {
     
@@ -1223,6 +1233,32 @@ int main ()
 
     test61();
     test62();
+    // stack 
+    std::cout<<"Test stack ========================="<<std::endl;
+    std::stack<int> s;
+
+    for (int i: {1,2,3,4,5})
+        s.push(i);
+    display(s);
+
+    s.push(100);
+
+    display(s);
+
+    s.pop();
+    s.pop();
+    display(s);
+    std::cout << "Size: " << s.size() << std::endl;
+    while( !s.empty() )
+        s.pop();
+
+    std::cout << "Size: " << s.size() << std::endl;
+    display(s);
+
+    s.push(10);
+    display(s);
+    s.top() = 100;
+    display(s);
     return 0;
 }
 
