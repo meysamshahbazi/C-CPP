@@ -918,7 +918,7 @@ void test46()
 }
 
 template<typename T>
-void display(const std::set<T> set_to_display )
+void display(const std::set<T> &set_to_display )
 {
     std::cout<<"[ ";
     for (const auto &s:set_to_display)
@@ -1000,6 +1000,85 @@ void test53()
 
 }
 
+template<typename T1,typename T2>
+void display(const std::map<T1,T2> &m)
+{
+    std::cout<<"[ ";
+    for (const auto & elem:m)
+    {
+        std::cout<<elem.first<<":"<<elem.second<<" ";
+    }
+    std::cout<<"]"<<std::endl;
+}
+void test61()
+{
+    std::cout << "\nTest 61 =========================" << std::endl;
+    std::map<std::string, int> m{
+        {"Larry", 3},
+        {"Moe", 1},
+        {"Curly", 2}
+    };
+    display(m);
+    m.insert(std::make_pair<std::string,int>("Anna",5));
+    display(m);
+
+    // m.insert(std::make_pair<std::string,int>("joe",4));
+    m.emplace("joe",4);
+    display(m);
+    m["Frank"] = 14;
+    display(m);
+
+    m["Frank"] += 14;
+    display(m);
+
+    m.erase("Frank");
+
+    display(m);
+
+    std::cout << "Count for Joe: " << m.count("joe") << std::endl;
+    std::cout << "Count for Frank: " << m.count("Frank") << std::endl;
+
+    auto it = m.find("Larry");
+
+    if (it != m.end())
+        std::cout << "Found: " << it->first << " : " << it->second << std::endl;  
+
+    m.clear();
+    display(m);
+
+
+}
+
+void display(const std::map<std::string, std::set<int>> &m)
+{
+    std::cout<<"{ "<<std::endl;
+    for (const auto & elem:m)
+    {
+        std::cout<<elem.first<<":";
+        display(elem.second);
+    }
+    std::cout<<"}"<<std::endl;
+}
+void test62()
+{
+    std::cout << "\nTest 61 =========================" << std::endl;
+    
+     std::map<std::string, std::set<int>> grades  {
+        {"Larry", {100, 90} },
+        {"Moe",  {94} },
+        {"Curly", {80, 90, 100} }
+    };
+    display(grades);
+
+    grades["Larry"].insert(95);
+    display(grades);
+    auto it = grades.find("Moe");
+    if (it != grades.end())
+        it->second.insert(1000);
+
+    display(grades);
+
+}
 
 
 int main ()
@@ -1141,6 +1220,9 @@ int main ()
     test51();
     test52();
     test53();
+
+    test61();
+    test62();
     return 0;
 }
 
