@@ -11,6 +11,7 @@
 #include <deque>
 #include <iterator>
 #include <stack>
+#include <queue>
 
 
 template <typename T>
@@ -1089,8 +1090,21 @@ void display(std::stack<T> s)
         std::cout<<s.top()<<" ";
         s.pop();
     }
-    std::cout<<" ]"<<std::endl;
+    std::cout<<"]"<<std::endl;
 }
+
+template <typename T>
+void display(std::queue<T> s)
+{
+    std::cout<<"[ ";
+    while(!s.empty() )
+    {
+        std::cout<<s.front()<<" ";
+        s.pop();
+    }
+    std::cout<<"]"<<std::endl;
+}
+
 int main ()
 {
     
@@ -1259,6 +1273,50 @@ int main ()
     display(s);
     s.top() = 100;
     display(s);
+    // queue
+    std::cout<<"Test queue ========================="<<std::endl;
+    std::queue<int> q;
+
+    for(int i:{1,2,3,4,5})
+        q.push(i);
+    display(q);
+
+    std::cout << "Front: " << q.front() << std::endl;
+    std::cout << "Back:  " << q.back() << std::endl;
+
+    q.push(100);
+    display(q);
+
+    q.pop();
+    display(q);
+
+        q.pop();
+    q.pop();
+    display(q);
+    
+    while (!q.empty())
+        q.pop();
+    display(q);
+
+    std::cout << "Size: " << q.size() << std::endl;
+    
+    q.push(10);
+    q.push(100);
+    q.push(1000);
+    display(q);
+    
+    std::cout << "Front: " << q.front() << std::endl;
+    std::cout << "Back:  " << q.back() << std::endl;
+    
+    q.front() = 5;
+    q.back() = 5000;
+    
+    display(q);
+    std::cout << "Front: " << q.front() << std::endl;
+    std::cout << "Back:  " << q.back() << std::endl;
+
+    
+
     return 0;
 }
 
