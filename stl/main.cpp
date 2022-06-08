@@ -917,6 +917,88 @@ void test46()
     display(stooges);
 }
 
+template<typename T>
+void display(const std::set<T> set_to_display )
+{
+    std::cout<<"[ ";
+    for (const auto &s:set_to_display)
+    {
+        std::cout<<s<<" ";
+    }
+    std::cout<<"]"<<std::endl;
+}
+
+void test51()
+{
+    std::cout << "\nTest 51 =========================" << std::endl;
+    std::set<int> s1 = {1, 4, 3, 5, 2};
+    display(s1);
+    s1 = {1,2,3,1,1,2,2,3,3,4,5};
+    display(s1);
+
+    s1.insert(0);
+
+    display(s1);
+    s1.insert(10);
+    display(s1);
+    
+    if(s1.count(10))
+        std::cout<<"10 is here in set"<<std::endl;
+    else    
+        std::cout<<"10 is NNOOOT here in set"<<std::endl;
+
+    auto it = s1.find(5);
+    if(it !=s1.end() )
+        std::cout<<"found "<<*it<<std::endl;
+    
+    s1.clear();
+    display(s1);
+
+}
+void test52()
+{
+    std::cout << "\nTest 52 =========================" << std::endl;
+    std::set<Personn> stooges {
+        {"Larry", 1},
+        {"Moe", 2},
+        {"Curly", 3}
+    };
+    display(stooges);
+    stooges.emplace("james",19);
+    display(stooges);
+    stooges.emplace("frank",19);
+    display(stooges);
+
+    auto it = stooges.find(Personn{"Moeee",2});
+    if (it != stooges.end()) 
+        std::cout<<"found= "<<*it<<std::endl;
+
+    display(stooges);
+
+    it = stooges.find(Personn{"XXX",19});
+    if (it != stooges.end())
+        stooges.erase(it);
+
+    display(stooges);
+
+}
+void test53()
+{
+    std::cout << "\nTest 53 =========================" << std::endl;
+    std::set<std::string> s {"A", "B", "C"};
+    display(s);
+
+    auto result = s.insert("D");
+    display(s);
+    std::cout<<*(result.first)<<std::endl;
+    std::cout<<(result.second)<<std::endl;
+
+    result = s.insert("A");
+    display(s);
+    std::cout<<*(result.first)<<std::endl;
+    std::cout<<(result.second)<<std::endl;
+
+}
 
 
 
@@ -1056,6 +1138,9 @@ int main ()
     test45();
     test46();
 
+    test51();
+    test52();
+    test53();
     return 0;
 }
 
