@@ -1105,6 +1105,18 @@ void display(std::queue<T> s)
     std::cout<<"]"<<std::endl;
 }
 
+template <typename T>
+void display(std::priority_queue<T> s)
+{
+    std::cout<<"[ ";
+    while(!s.empty() )
+    {
+        std::cout<<s.top()<<" ";
+        s.pop();
+    }
+    std::cout<<"]"<<std::endl;
+}
+
 int main ()
 {
     
@@ -1315,7 +1327,28 @@ int main ()
     std::cout << "Front: " << q.front() << std::endl;
     std::cout << "Back:  " << q.back() << std::endl;
 
+    std::cout<<"Test priority_queue ========================="<<std::endl;
+    std::priority_queue<int> pq;
+
+    for (int i :{3,5,7,12,23,12,4,100,0, 3,5,7})
+        pq.push(i);
     
+    display(pq);
+    std::cout << "Size: " << pq.size() << std::endl;
+    std::cout << "Top: " << pq.top() << std::endl;
+
+    pq.pop();
+    display(pq);
+
+    std::priority_queue<Personn> pqp;
+    pqp.push(Personn{"A", 10});
+    pqp.push(Personn{"B", 1});
+    pqp.push(Personn{"C", 14});
+    pqp.push(Personn{"D", 18});  
+    pqp.push(Personn{"E", 7});  
+    pqp.push(Personn{"F", 27});
+
+    display(pqp);
 
     return 0;
 }
